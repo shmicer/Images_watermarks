@@ -1,11 +1,11 @@
 from PIL import Image, ImageFont, ImageDraw
-from config import color1, color2, text1, text2, opacity, input_folder_path, output_folder_path
+from config import color1, color2, text1, text2, opacity, input_folder_path, output_folder_path, logo_path
 import os
 
 
 def make_transparent_watermark():
     """Make logo transparent and save it to a file"""
-    im_rgb = Image.open('logo.jpg')
+    im_rgb = Image.open(f"{logo_path}/logo.jpg")
     im_rgba = im_rgb.copy()
     im_rgba.putalpha(opacity)
     datas = im_rgba.getdata()
@@ -17,7 +17,7 @@ def make_transparent_watermark():
             new_data.append(item)
 
     im_rgba.putdata(new_data)
-    im_rgba.save("transparent_logo.png", "PNG")
+    im_rgba.save(f"{logo_path}/transparent_logo.png", "PNG")
 
 
 def add_watermark(input_path, output_path):
@@ -25,7 +25,7 @@ def add_watermark(input_path, output_path):
     Add two texts(because it has to be different colors)
     to image"""
     im = Image.open(input_path).convert("RGBA")
-    wm = Image.open('transparent_logo.png').convert("RGBA")
+    wm = Image.open(f"{logo_path}/transparent_logo.png").convert("RGBA")
     width, height = im.size
     width_percent = (wm.size[0] / wm.size[1])
     new_watermark = wm.resize((int((width / 7.5) * width_percent), int(int(width / 7.5))))
