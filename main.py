@@ -70,7 +70,7 @@ def add_watermark(input_path, output_path, logo):
     out.save(output_path)
 
 
-def modernize_webp_files(input_folder, output_folder):
+def main(input_folder, output_folder):
     """
     Iterate over all files and folders within the input folder
     :param input_folder: original files folder
@@ -110,4 +110,4 @@ def modernize_webp_files(input_folder, output_folder):
 
 if __name__ == '__main__':
     make_transparent_watermark(logo_path)
-    modernize_webp_files(input_folder_path, output_folder_path)
+    main(input_folder_path, output_folder_path)
