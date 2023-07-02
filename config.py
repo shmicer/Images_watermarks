@@ -1,7 +1,8 @@
 
-input_folder_path = '/Users/dmitrij/Desktop/imgs/Telegram Archive'
-output_folder_path = '/Users/dmitrij/Desktop/imgs/Telegram Archive_output'
-logo_path = '/Users/dmitrij/Desktop/imgs/'
+input_folder_path = '/Users/dmitrij/Desktop/imgs/handmade_products_1'
+output_folder_path = '/Users/dmitrij/Desktop/imgs/handmade_products_1_out'
+logo_path = '/Users/dmitrij/Desktop/imgs/logo.jpg'
+transparent_logo_path = '/Users/dmitrij/Desktop/imgs/transparent_logo.png'
 
 opacity = 170
 text1 = 'electro'
